@@ -9,5 +9,14 @@ export class AppComponent {
   title = 'Dynamic title';
   number = 42;
   arr = [1,2,3];
-  obh = {a:1, b: {c:2}};
+  obj = {a:1, b: {c:2}};
+
+  img = 'https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg';
+
+  constructor() {
+    setTimeout(() => {
+      console.log('Timeout is elapsed');
+      this.img = 'https://thumbnail.imgbin.com/2/18/6/imgbin-react-javascript-library-angularjs-github-89JYbnwWSANSrkV8tMnFuDALH_t.jpg';
+    }, 5000);
+  }
 }
