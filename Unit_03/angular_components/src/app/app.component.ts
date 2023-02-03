@@ -17,4 +17,9 @@ export class AppComponent {
     {title: 'Следующий блок', text: 'Будет про директивы', id: 2}
   ]
 
+  updatePosts(post: Post){
+    this.posts.unshift(post);
+    console.log('Post: ', post);
+  }
+
 }
