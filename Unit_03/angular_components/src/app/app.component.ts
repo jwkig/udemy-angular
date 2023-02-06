@@ -22,4 +22,8 @@ export class AppComponent {
     console.log('Post: ', post);
   }
 
+  removePost(id: number) {
+    console.log('Id to remove ', id);
+    this.posts = this.posts.filter(p => p.id !== id);
+  }
 }
