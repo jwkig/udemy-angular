@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 export interface Post {
   title: string;
@@ -11,10 +11,10 @@ export interface Post {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   posts: Post[] = [
     {title: 'Хочу выучить Angular компоненты', text: 'Я все ещу учу компоненты', id: 1},
-    {title: 'Следующий блок', text: 'Будет про директивы', id: 2}
+    // {title: 'Следующий блок', text: 'Будет про директивы', id: 2}
   ]
 
   updatePosts(post: Post){
@@ -25,5 +25,12 @@ export class AppComponent {
   removePost(id: number) {
     console.log('Id to remove ', id);
     this.posts = this.posts.filter(p => p.id !== id);
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      console.log('Timeout');
+      this.posts[0].title = 'Changed!';
+    }, 5000);
   }
 }
